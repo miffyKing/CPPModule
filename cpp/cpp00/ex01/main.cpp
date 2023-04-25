@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcho <bcho@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: chobyounghwa <chobyounghwa@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:52:12 by bcho              #+#    #+#             */
-/*   Updated: 2023/04/25 17:19:43 by bcho             ###   ########.fr       */
+/*   Updated: 2023/04/25 18:41:52 by chobyounghw      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int main()
             std::cout<< "ERROR: WRONG INPUT\n";
             command = "\0";
         }
-        // std::cout<<command;
     }   
     return 0;
 }

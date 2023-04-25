@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcho <bcho@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: chobyounghwa <chobyounghwa@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:44:11 by bcho              #+#    #+#             */
-/*   Updated: 2023/04/25 17:27:30 by bcho             ###   ########.fr       */
+/*   Updated: 2023/04/25 19:03:32 by chobyounghw      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void PhoneBook::check_eof()
   }
 }
 
-static std::string print_max_string(std::string str)
+std::string print_max_string(std::string str)
 {
   if (str.length() > MAX_COL_WIDTH)
   {
@@ -42,7 +42,7 @@ static std::string print_max_string(std::string str)
     return str;
 }
 
-static int string_to_int(std::string search_str)
+int string_to_int(std::string search_str)
 {
   int temp;
 
@@ -54,8 +54,6 @@ static int string_to_int(std::string search_str)
     else
       temp = temp * 10 + search_str[i] - '0';
   }
-  if (temp < 0)
-    temp = -temp;
   return (temp);
 }
 
@@ -116,9 +114,9 @@ void PhoneBook:: search_contact() {
   int idx;
 
   std::cout<<  std::setw(10) << "index" << "|"
-            << std::setw(10) << "first_name_" << "|"
-            << std::setw(10) << "last_name_" << "|"
-            << std::setw(10) << "nick_name_" << std::endl;
+            << std::setw(10) << "first_name" << "|"
+            << std::setw(10) << "last_name" << "|"
+            << std::setw(10) << "nick_name" << std::endl;
   for (int i = 0; i < MAX_CONTACT_NUM && !contacts[i].get_first_name().empty(); i++)
   {
     std::cout << std::setw(10) << i << "|"
@@ -149,7 +147,7 @@ void PhoneBook:: search_contact() {
     idx = search_num;
     break;
   }
-  get_contact(id);
+  get_contact(idx);
   return ;
 }
 
@@ -160,10 +158,10 @@ void PhoneBook::get_contact(int index)
     std::cout << "Error: Invalid index number." << std::endl;
     return ;
   }
-  std::cout << "first_name_ : " << contacts[index].get_first_name() << std::endl
-            << "last_name_ : " << contacts[index].get_last_name() << std::endl
-            << "nick_name_ : " << contacts[index].get_nick_name() << std::endl
-            << "phone_number_ : " << contacts[index].get_phone_number() << std::endl
-            << "darkest_secret_ : " << contacts[index].get_darkest_secret() << std::endl;
+  std::cout << "first_name : " << contacts[index].get_first_name() << std::endl
+            << "last_name : " << contacts[index].get_last_name() << std::endl
+            << "nick_name : " << contacts[index].get_nick_name() << std::endl
+            << "phone_number : " << contacts[index].get_phone_number() << std::endl
+            << "darkest_secret : " << contacts[index].get_darkest_secret() << std::endl;
 
 }
