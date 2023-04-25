@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chobyounghwa <chobyounghwa@student.42.f    +#+  +:+       +#+        */
+/*   By: bcho <bcho@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:52:12 by bcho              #+#    #+#             */
-/*   Updated: 2023/04/25 00:59:19 by chobyounghw      ###   ########.fr       */
+/*   Updated: 2023/04/25 17:19:43 by bcho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 int main()
 {
@@ -22,25 +21,27 @@ int main()
     while(1)
     {
         // ctrl + d 입력시 종료 시키기.
-        
         std::cout<<"Input Command:: ";
+		std::getline(std::cin, command);
+        pb.check_eof();
         
-        std::cin>>command;
         if (command == "ADD")
         {
             pb.add_contact();
         }
         else if (command == "SEARCH")
         {
-
+            pb.search_contact();
         }
         else if (command == "EXIT")
         {
-
+            std::cout<< "BYE BYE \n";
+            break;
         }
         else 
         {
-            
+            std::cout<< "ERROR: WRONG INPUT\n";
+            command = "\0";
         }
         // std::cout<<command;
     }   
