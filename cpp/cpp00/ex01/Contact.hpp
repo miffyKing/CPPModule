@@ -6,14 +6,14 @@
 /*   By: bcho <bcho@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:44:14 by bcho              #+#    #+#             */
-/*   Updated: 2023/04/25 17:21:31 by bcho             ###   ########.fr       */
+/*   Updated: 2023/04/25 19:11:34 by bcho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include <string>
-#include <cstdio>
-#include <stdlib.h>
 
 class Contact
 {
@@ -38,3 +38,5 @@ class Contact
         std::string get_phone_number();
         std::string get_darkest_secret();
 };
+
+#endif

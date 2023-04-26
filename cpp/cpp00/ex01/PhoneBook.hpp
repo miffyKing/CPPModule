@@ -1,3 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bcho <bcho@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/25 19:11:47 by bcho              #+#    #+#             */
+/*   Updated: 2023/04/25 19:11:49 by bcho             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include <iostream>
 #include <string>
 #include <cstdio>
@@ -24,3 +39,5 @@ class PhoneBook
         void check_eof(void);
 
 };
+
+#endif

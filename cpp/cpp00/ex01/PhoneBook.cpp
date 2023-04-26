@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chobyounghwa <chobyounghwa@student.42.f    +#+  +:+       +#+        */
+/*   By: bcho <bcho@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:44:11 by bcho              #+#    #+#             */
-/*   Updated: 2023/04/25 19:03:32 by chobyounghw      ###   ########.fr       */
+/*   Updated: 2023/04/25 19:11:42 by bcho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void PhoneBook:: search_contact() {
   {
     std::cout << "INPUT INDEX  YOU WANT TO SEARCH: ";
 		std::getline(std::cin, search_str);
-    if (std::cin.eof())           //이거 모르겠고
+    if (std::cin.eof())
     check_eof();
     search_num = string_to_int(search_str);
     if (search_num == -1)
