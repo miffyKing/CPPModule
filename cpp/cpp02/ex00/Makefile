@@ -10,7 +10,7 @@ endif
 NAME		=	a.out
 FOLDER		=	./
 HEADER		=	./
-SRC_LIST	=	main.cpp Fixed.hpp Fixed.cpp
+SRC_LIST	=	main.cpp Fixed.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:%.cpp=%.o)
 
