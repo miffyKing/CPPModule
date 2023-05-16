@@ -63,11 +63,7 @@ int Fixed:: toInt(void) const
   return (this->number >> this->bits);
 }
 
-std::ostream& operator<< (std::ostream &out, const Fixed &fixed)
-{
-  out<<fixed.toFloat();
-  return out;
-}
+ // ================사칙 연산자 ==================//
 
 Fixed Fixed:: operator+(const Fixed &ref)   //const 없으면 a = Fixed(1234.1231f) 에서 오류 발생.
 {
@@ -89,6 +85,114 @@ Fixed Fixed:: operator*(const Fixed &ref)   //const 없으면 a = Fixed(1234.123
 
 Fixed Fixed:: operator/(const Fixed &ref)   //const 없으면 a = Fixed(1234.1231f) 에서 오류 발생.
 {
-  Fixed newFixed(this->toFloat() / ref.toFloat());
+  // std::cout<< " this->toFloat() is  : " << this->toFloat() <<"\n";
+  // std::cout<< " ref.toFloat() is  : " << ref.toFloat() <<"\n";
+  if (ref.toInt() == 0)
+  {
+    std::cout<< "divider should not be zero\n";
+    
+    exit (1);
+  } else{
+Fixed newFixed(this->toFloat() / ref.toFloat());
   return newFixed;
+  }
+  
+
+  // std::cout << "calculatin result is " << this->toFloat() / ref.toFloat() <<"\n";
+  // std::cout<< "newFixed.toFloat() is " << newFixed.toFloat() << "\n";
+
 }
+
+// ================비교 연산자 ==================//
+
+bool Fixed:: operator==(const Fixed &f2)
+{
+  return (this->getRawBits() == f2.getRawBits());
+}
+
+bool Fixed:: operator<(const Fixed &f2)
+{
+  return (this->getRawBits() < f2.getRawBits());
+}
+
+bool Fixed:: operator>(const Fixed &f2)
+{
+  return (this->getRawBits() > f2.getRawBits());
+}
+
+bool Fixed:: operator<=(const Fixed &f2)
+{
+  return (this->getRawBits() <= f2.getRawBits());
+}
+
+bool Fixed:: operator>=(const Fixed &f2)
+{
+  return (this->getRawBits() >= f2.getRawBits());
+}
+
+bool Fixed:: operator!=(const Fixed &f2)
+{
+  return (this->getRawBits() != f2.getRawBits());
+}
+
+// ================증감 연산자 (전위후위))==================//
+
+Fixed& Fixed::operator++ ()
+{
+  //std::cout<<"before operator ++ " << this->number<<"\n";
+  this->number++;
+  //std::cout<<"after operator ++ " << this->number<<"\n";
+  return *this;
+}
+
+Fixed Fixed::operator++ (int)
+{
+  Fixed tmp(*this);
+  this->number++;
+  return tmp;
+}
+
+Fixed&	Fixed::operator-- ()
+{
+	this->number--;
+	return (*this);
+}
+
+Fixed	Fixed::operator-- (int)
+{
+  Fixed tmp(*this);
+  this->number--;
+  return tmp;
+}
+
+Fixed& Fixed::min(Fixed& fixed1, Fixed& fixed2)
+{
+  return (fixed1.getRawBits() <= fixed2.getRawBits() ? fixed1 : fixed2);
+}
+
+const Fixed& Fixed::min(const Fixed& fixed1, const Fixed& fixed2)
+{
+  return (fixed1.getRawBits() <= fixed2.getRawBits() ? fixed1 : fixed2);
+}
+
+Fixed& Fixed::max(Fixed& fixed1, Fixed& fixed2)
+{
+  return (fixed1.getRawBits() <= fixed2.getRawBits() ? fixed2 : fixed1);
+}
+
+const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2)
+{
+  return (fixed1.getRawBits() <= fixed2.getRawBits() ? fixed2 : fixed1);
+}
+
+
+
+std::ostream& operator<< (std::ostream &out, const Fixed &fixed)
+{
+  //std::cout<<"before << override " << fixed.getRawBits() << "\n";
+  //std::cout<<"result of toFloat " << fixed.toFloat() << "\n";
+  
+  out<<fixed.toFloat();
+  return out;
+}
+
