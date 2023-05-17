@@ -10,6 +10,11 @@ Fixed:: Fixed(void)
 
 Fixed:: Fixed(const int num)
 {
+  // if (num > 8388607) 
+  // {
+  //   std::cout<< "unable to convert\n";
+  //   exit(1);
+  // }
   std::cout<<"Int constructor called\n";
   this->number = (num<<this->bits); //const 인데 변경하는게 아닌가?
   //8비트 left shift

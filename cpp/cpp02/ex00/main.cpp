@@ -6,7 +6,7 @@
 /*   By: chobyounghwa <chobyounghwa@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 13:20:42 by chobyounghw       #+#    #+#             */
-/*   Updated: 2023/05/07 01:19:15 by chobyounghw      ###   ########.fr       */
+/*   Updated: 2023/05/17 16:10:07 by chobyounghw      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,9 @@ int main( void )
   std::cout << a.getRawBits() << std::endl;
   std::cout << b.getRawBits() << std::endl;
   std::cout << c.getRawBits() << std::endl;
+  
+  a.setRawBits(30);
+  std::cout << a.getRawBits() << std::endl;
+  
   return 0;
 }

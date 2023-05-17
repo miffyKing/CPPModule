@@ -15,6 +15,7 @@ Fixed:: Fixed(Fixed& fixed)  //복사 생성자
 Fixed& Fixed:: operator=(Fixed &ref)
 {
   std::cout<<"Copy assignment operator called\n";
+  //delete number (만약 number 가 리스트 타입이라면)
   this->number = ref.getRawBits();
   return (*this);
 } 
