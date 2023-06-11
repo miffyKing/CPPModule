@@ -39,7 +39,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &ref)
 
 ClapTrap::~ClapTrap()
 {
-  std::cout << this->name_ << " Destructor called\n";
+  std::cout <<"ClapTrap " << this->name_ << " Destructor called\n";
 }
 
 std::string ClapTrap::getName() const

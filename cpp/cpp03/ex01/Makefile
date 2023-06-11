@@ -10,7 +10,7 @@ endif
 NAME		=	a.out
 FOLDER		=	./
 HEADER		=	./
-SRC_LIST	=	main.cpp ClapTrap.cpp
+SRC_LIST	=	main.cpp ClapTrap.cpp ScavTrap.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:%.cpp=%.o)
 
