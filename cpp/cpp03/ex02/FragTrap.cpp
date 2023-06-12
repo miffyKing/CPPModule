@@ -43,18 +43,6 @@ FragTrap::~FragTrap()
   std::cout << "FragTrap " << this->name_ << " Destructor called.\n";
 }
 
-void FragTrap::attack(const std::string &target)
-{
-  if (checkStatus() != 1)
-  {
-    std::cout << "can't attack \n";
-    showStats();
-    return;
-  }
-  this->energyPoint_--;
-  std::cout << "FragTrap " << this->name_ << " attacks " << target << ", causing " << this->attackDamage_ << " points of damage!\n";
-}
-
 void FragTrap::highFivesGuys(void)
 {
   if (checkStatus() != 1)
