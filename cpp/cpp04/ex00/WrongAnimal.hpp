@@ -15,7 +15,7 @@ public:
   WrongAnimal &operator=(const WrongAnimal &ref);
   virtual ~WrongAnimal();
 
-  virtual void makeSound(void) const;
+  void makeSound(void) const;
   std::string getType() const;
 };
 
