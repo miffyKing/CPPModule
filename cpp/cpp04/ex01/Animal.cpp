@@ -15,6 +15,7 @@ Animal::Animal(const Animal &animal)
 
 Animal &Animal::operator=(const Animal &ref)
 {
+  std::cout<<"animal equi operator\n";
   this->type_ = ref.getType();
   return *this;
 }

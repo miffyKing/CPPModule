@@ -7,17 +7,20 @@ Cat::Cat() : Animal()
   std::cout << "Cat is created\n";
 }
 
-Cat::Cat(Cat &cat)
+Cat::Cat(const Cat &cat)
 {
+  delete this->brain;
   this->type_ = cat.getType();
-  this->brain = new Brain(*cat.getBrain()); //* 인 이유? Brain 의 생성자를 자세히 보자.
+  this->brain = new Brain(*cat.getBrain());
   std::cout << "Cat copy created\n";
 }
 
-Cat &Cat::operator=(Cat &cat)
+Cat &Cat::operator=(const Cat &cat)
 {
+  delete this->brain;
+  std::cout << "equi operator of cat \n";
   this->type_ = cat.getType();
-  this->brain = new Brain(*cat.getBrain()); // 그냥 cat.getBrain() 을 할당해 주지 않는 이유가 무엇인가??
+  this->brain = new Brain(*cat.getBrain());
   return *this;
 }
 
@@ -33,7 +36,7 @@ void Cat::makeSound() const
   std::cout << " Yaong Yaong\n";
 }
 
-Brain *Cat::getBrain()
+Brain *Cat::getBrain() const
 {
   return this->brain;
 }

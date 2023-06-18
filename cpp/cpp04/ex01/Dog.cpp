@@ -9,6 +9,7 @@ Dog::Dog() : Animal()
 
 Dog::Dog(Dog &dog)
 {
+  delete this->brain;
   this->type_ = dog.getType();
   this->brain = new Brain(*dog.getBrain());
   std::cout << "Dog copy created\n";
@@ -16,6 +17,7 @@ Dog::Dog(Dog &dog)
 
 Dog &Dog::operator=(Dog &dog)
 {
+  delete this->brain;
   this->type_ = dog.getType();
   this->brain = new Brain(*dog.getBrain());
   return *this;

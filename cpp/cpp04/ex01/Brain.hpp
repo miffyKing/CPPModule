@@ -10,11 +10,11 @@ private:
   /* data */
 public:
   Brain(void);
-  Brain(Brain &brain);
+  Brain(const Brain &brain);
   ~Brain();
-  Brain &operator=(Brain &src);
+  Brain &operator=(const Brain &src);
 
-  std::string getIdeas(int n);           // n번째 idea 리턴
+  std::string getIdeas(int n) const ;           // n번째 idea 리턴
   void setIdea(std::string idea, int n); // n 번째 idea 지정.
 };
 

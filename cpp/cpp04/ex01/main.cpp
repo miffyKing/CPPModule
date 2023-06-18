@@ -4,8 +4,14 @@
 
 #include <iostream>
 
+void check()
+{
+  system("leaks a.out");
+}
 int main()
 {
+  atexit(check);
+
   const Animal *j = new Dog();
   const Animal *i = new Cat();
 
@@ -38,7 +44,7 @@ int main()
 
   std::cout << "changed cat1 2nd idea is " << cat1->getBrain()->getIdeas(2) << "\n";
 
-  cat2 = cat1;
+  *cat2 = *cat1;
 
   std::cout << "cat2 2nd idea is " << cat2->getBrain()->getIdeas(2) << "\n";
 
@@ -48,6 +54,8 @@ int main()
 
   std::cout << "cat2 changed and cat1 2nd idea is " << cat1->getBrain()->getIdeas(2) << "\n";
 
-  // system("leaks a.out");
+  delete cat1;
+  delete cat2;
+  
   return 0;
 }

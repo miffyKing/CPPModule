@@ -5,8 +5,13 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+void check()
+{
+system("leaks a.out");
+}
 int main()
 {
+  // atexit(check);
   Animal animal1;
   Cat cat1;
   Dog dog1;
@@ -43,6 +48,6 @@ int main()
   delete wrongMeta;
   delete wrongCat2;
   delete wrongCat;
-  // system("leaks a.out");
+  
   return 0;
 }
