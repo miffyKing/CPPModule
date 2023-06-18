@@ -17,14 +17,6 @@ int main()
   dog1.makeSound();
   std::cout << "==============================\n";
 
-  Animal cat2 = Cat();
-  Animal dog2 = Dog();
-
-  std::cout << "==============================\n";
-  cat2.makeSound();
-  dog2.makeSound();
-  std::cout << "==============================\n";
-
   std::cout << "============given main func ============\n";
   const Animal *meta = new Animal();
   const Animal *j = new Dog();
@@ -43,8 +35,14 @@ int main()
   std::cout << " =======LETS CHECK WRONG ANIMAL ========\n";
   const WrongAnimal *wrongMeta = new WrongAnimal();
   const WrongAnimal *wrongCat = new WrongCat();
+  const WrongCat *wrongCat2 = new WrongCat();
   wrongMeta->makeSound();
   wrongCat->makeSound();
+  wrongCat2->makeSound(); // 그냥 본인 객체로 생성하면 문제 없어요.
 
+  delete wrongMeta;
+  delete wrongCat2;
+  delete wrongCat;
+  // system("leaks a.out");
   return 0;
 }

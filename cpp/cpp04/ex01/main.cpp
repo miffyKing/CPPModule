@@ -2,17 +2,15 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-
 #include <iostream>
 
 int main()
 {
-  const Animal* j = new Dog();
-  const Animal* i = new Cat();
+  const Animal *j = new Dog();
+  const Animal *i = new Cat();
 
   delete j;
   delete i;
-
 
   Animal *animals[10];
   for (int i = 0; i < 5; i++)
@@ -28,14 +26,28 @@ int main()
   {
     delete animals[i];
   }
-  
-  std::cout<<"\n\n================================================\n\n";
 
-  Cat cat1;
+  std::cout << "\n\n================================================\n\n";
 
-  std::cout << cat1.getBrain()->getIdeas(2) <<"\n";
+  Cat *cat1 = new Cat();
+  Cat *cat2 = new Cat();
 
+  std::cout << "cat1 2nd idea is " << cat1->getBrain()->getIdeas(2) << "\n";
 
-  //system("leaks a.out");
+  cat1->getBrain()->setIdea(" -- changed 2nd idea -- ", 2);
+
+  std::cout << "changed cat1 2nd idea is " << cat1->getBrain()->getIdeas(2) << "\n";
+
+  cat2 = cat1;
+
+  std::cout << "cat2 2nd idea is " << cat2->getBrain()->getIdeas(2) << "\n";
+
+  cat2->getBrain()->setIdea(" - - --- -- ---  -- ", 2);
+
+  std::cout << "cat2 2nd idea is " << cat2->getBrain()->getIdeas(2) << "\n";
+
+  std::cout << "cat2 changed and cat1 2nd idea is " << cat1->getBrain()->getIdeas(2) << "\n";
+
+  // system("leaks a.out");
   return 0;
 }

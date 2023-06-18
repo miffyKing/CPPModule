@@ -34,6 +34,6 @@ int main()
 
   std::cout << cat1.getBrain()->getIdeas(2) << "\n";
 
-  // system("leaks a.out");
+   //system("leaks a.out");
   return 0;
 }
